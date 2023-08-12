@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Dagboek</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Dagboek</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div *ngFor="let ae of allEntrees; let index as i">
+    <ion-item>
+     <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ ae.datum }}</ion-card-title> 
+        <ion-button id="buttonRemove">
+          <ion-icon name='trash' id="iconRemove"></ion-icon>
+        </ion-button>
+      </ion-card-header>
+    
+      <ion-card-content>
+        info over {{ ae.datum }}
+      </ion-card-content>
+     </ion-card>
+    </ion-item>
+  </div> 
+  
+  <ion-fab-button [routerLink]="['/dagboek', 'toevoegen-dagboek']" id="buttonAdd">
+    <ion-icon name='add' id="iconAdd"></ion-icon>
+  </ion-fab-button>
+</ion-content>

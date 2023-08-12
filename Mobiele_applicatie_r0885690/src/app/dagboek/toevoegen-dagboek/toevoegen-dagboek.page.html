@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Toevoegen aan dagboek</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/boodschappen"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="handleCreateAndUpdate()">
+        <ion-icon slot="icon-only" name="checkmark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Toevoegen aan dagboek</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ion-datetime [showDefaultTitle]="true" presentation="date" id="selectDate" class="ion-margin-top" [(ngModel)]='datum'></ion-datetime>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Ontbijt</ion-label>
+      <ion-input type="text" class="ion-margin-top"
+                 [(ngModel)]='ontbijt'></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Lunch</ion-label>
+      <ion-input type="text" class="ion-margin-top"
+                 [(ngModel)]='middag'></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Avondmaal</ion-label>
+      <ion-input type="text" class="ion-margin-top"
+                 [(ngModel)]='avond'></ion-input>
+    </ion-item>
+  </div>
+   
+</ion-content>

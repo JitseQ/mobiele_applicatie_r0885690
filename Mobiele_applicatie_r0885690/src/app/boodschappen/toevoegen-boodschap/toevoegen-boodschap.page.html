@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Toevoegen boodschap</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/boodschappen"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="handleCreateAndUpdate()">
+        <ion-icon slot="icon-only" name="checkmark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">toevoegenBoodschap</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  
+  <ion-item lines="full">
+    <ion-label position="floating">Item</ion-label>
+    <ion-input type="text" class="ion-margin-top"
+               [(ngModel)]='name'></ion-input>
+  </ion-item>
+</ion-content>

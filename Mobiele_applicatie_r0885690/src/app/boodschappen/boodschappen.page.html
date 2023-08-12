@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Boodschappen</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+
+    <div *ngFor="let ab of allBoodschappen; let index as i">
+      <ion-item>
+       <ion-checkbox></ion-checkbox>
+        <ion-label>{{ ab.name }}</ion-label>
+        <ion-list-header>
+          <ion-label> {{ ab.name }} </ion-label>
+        </ion-list-header>
+
+        <ion-button id="buttonRemove">
+          <ion-icon name='trash' id="iconRemove"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </div> 
+
+    <ion-fab-button [routerLink]="['/boodschappen', 'toevoegen-boodschap']" id="buttonAdd">
+      <ion-icon name='add' id="iconAdd"></ion-icon>
+    </ion-fab-button>
+
+</div>
+</ion-content>
